@@ -125,7 +125,7 @@ export class ReminderListController {
     @Param('item_id') id: number,
   ): Promise<{
     id: number;
-    listId: number;
+    list_id: number;
     deleted: boolean;
   }> {
     const reminderList = await this.reminderListItemService.findOne(id);
@@ -133,13 +133,13 @@ export class ReminderListController {
       await this.reminderListItemService.delete(id, listId);
       return {
         id,
-        listId,
+        list_id: listId,
         deleted: true,
       };
     } else {
       return {
         id,
-        listId,
+        list_id: listId,
         deleted: false,
       };
     }
