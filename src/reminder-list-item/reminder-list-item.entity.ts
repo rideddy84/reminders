@@ -24,5 +24,9 @@ export class ReminderListItem {
   @CreateDateColumn()
   created_at?: Date;
 
+  @Column()
   remind_at?: Date;
+
+  @Column()
+  listId?: number;
 }
